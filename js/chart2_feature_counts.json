@@ -4,7 +4,7 @@
   "height": 260,
   "title": {
     "text": "How many toilets provide each facility?",
-    "subtitle": "Number of toilets marked as \u2018yes\u2019 in the dataset"
+    "subtitle": "Number of toilets marked as yes in the dataset"
   },
   "data": {
     "url": "data/feature_yes_counts.csv"
@@ -22,10 +22,7 @@
           "type": "quantitative",
           "title": "Number of toilets",
           "scale": {
-            "domain": [
-              0,
-              74
-            ]
+            "domain": [0, 74]
           }
         },
         "y": {
@@ -36,7 +33,8 @@
         },
         "tooltip": [
           {
-            "field": "feature"
+            "field": "feature",
+            "title": "Feature"
           },
           {
             "field": "yes_count",
