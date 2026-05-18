@@ -1,15 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 760,
-  "height": 560,
+  "width": 850,
+  "height": 520,
   "title": {
     "text": "Where are Melbourne's public toilets?",
-    "subtitle": "Each point is a public toilet; colour shows wheelchair accessibility"
+    "subtitle": "City of Melbourne municipal boundary with public toilet locations"
   },
   "projection": {
     "type": "mercator",
     "center": [144.96, -37.81],
-    "scale": 70000
+    "scale": 120000
   },
   "layer": [
     {
@@ -23,8 +23,8 @@
       "mark": {
         "type": "geoshape",
         "fill": "#f1f3f5",
-        "stroke": "#adb5bd",
-        "strokeWidth": 1.2
+        "stroke": "#6b7280",
+        "strokeWidth": 1.5
       }
     },
     {
@@ -37,8 +37,8 @@
       },
       "mark": {
         "type": "circle",
-        "size": 95,
-        "opacity": 0.85,
+        "size": 75,
+        "opacity": 0.9,
         "stroke": "white",
         "strokeWidth": 0.8
       },
