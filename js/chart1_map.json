@@ -1,84 +1,92 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
-  "height": 520,
+  "width": 760,
+  "height": 560,
   "title": {
-    "text": "Where are Melbourne\u2019s public toilets?",
+    "text": "Where are Melbourne's public toilets?",
     "subtitle": "Each point is a public toilet; colour shows wheelchair accessibility"
-  },
-  "data": {
-    "url": "data/public-toilets.geojson",
-    "format": {
-      "type": "json",
-      "property": "features"
-    }
   },
   "projection": {
     "type": "mercator",
-    "center": [
-      144.956,
-      -37.809
-    ],
-    "scale": 260000
+    "center": [144.96, -37.81],
+    "scale": 70000
   },
-  "mark": {
-    "type": "circle",
-    "size": 120,
-    "opacity": 0.9,
-    "stroke": "white",
-    "strokeWidth": 1
-  },
-  "encoding": {
-    "longitude": {
-      "field": "properties.lon",
-      "type": "quantitative"
+  "layer": [
+    {
+      "data": {
+        "url": "data/melbourne_boundary.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f1f3f5",
+        "stroke": "#adb5bd",
+        "strokeWidth": 1.2
+      }
     },
-    "latitude": {
-      "field": "properties.lat",
-      "type": "quantitative"
-    },
-    "color": {
-      "field": "properties.wheelchair",
-      "type": "nominal",
-      "title": "Wheelchair accessible",
-      "scale": {
-        "domain": [
-          "yes",
-          "no",
-          "U"
-        ],
-        "range": [
-          "#2a9d8f",
-          "#e76f51",
-          "#9ca3af"
+    {
+      "data": {
+        "url": "data/public-toilets.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "circle",
+        "size": 95,
+        "opacity": 0.85,
+        "stroke": "white",
+        "strokeWidth": 0.8
+      },
+      "encoding": {
+        "longitude": {
+          "field": "geometry.coordinates[0]",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "geometry.coordinates[1]",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "properties.wheelchair",
+          "type": "nominal",
+          "title": "Wheelchair accessible",
+          "scale": {
+            "domain": ["yes", "no", "U"],
+            "range": ["#2a9d8f", "#e76f51", "#adb5bd"]
+          },
+          "legend": {
+            "labelExpr": "datum.label == 'yes' ? 'YES' : datum.label == 'no' ? 'NO' : 'UNKNOWN'"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "properties.name",
+            "title": "Toilet name"
+          },
+          {
+            "field": "properties.wheelchair",
+            "title": "Wheelchair accessible"
+          },
+          {
+            "field": "properties.baby_facil",
+            "title": "Baby change"
+          }
         ]
-      },
-      "legend": {
-        "orient": "right"
       }
-    },
-    "tooltip": [
-      {
-        "field": "properties.name",
-        "title": "Toilet"
-      },
-      {
-        "field": "properties.wheelchair",
-        "title": "Wheelchair accessible"
-      },
-      {
-        "field": "properties.baby_facil",
-        "title": "Baby change"
-      },
-      {
-        "field": "properties.operator",
-        "title": "Operator"
-      }
-    ]
-  },
+    }
+  ],
   "config": {
     "view": {
       "stroke": "transparent"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 12
     }
   }
 }
