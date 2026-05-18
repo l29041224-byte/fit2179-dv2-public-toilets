@@ -1,15 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 900,
-  "height": 560,
+  "width": 980,
+  "height": 620,
   "title": {
     "text": "Where are Melbourne's public toilets?",
     "subtitle": "City of Melbourne municipal boundary with public toilet locations"
   },
   "projection": {
     "type": "mercator",
-    "center": [144.96, -37.81],
-    "scale": 165000
+    "center": [144.965, -37.812],
+    "scale": 220000
   },
   "layer": [
     {
@@ -24,7 +24,7 @@
         "type": "geoshape",
         "fill": "#f1f3f5",
         "stroke": "#6b7280",
-        "strokeWidth": 1.5
+        "strokeWidth": 1.8
       }
     },
     {
@@ -37,7 +37,7 @@
       },
       "mark": {
         "type": "circle",
-        "size": 65,
+        "size": 55,
         "opacity": 0.9,
         "stroke": "white",
         "strokeWidth": 0.8
@@ -60,6 +60,8 @@
             "range": ["#2a9d8f", "#e76f51", "#adb5bd"]
           },
           "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
             "labelExpr": "datum.label == 'yes' ? 'YES' : datum.label == 'no' ? 'NO' : 'UNKNOWN'"
           }
         },
