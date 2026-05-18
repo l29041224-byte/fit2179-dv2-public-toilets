@@ -1,0 +1,13 @@
+feature,status,count
+Female facility,yes,61
+Female facility,no,11
+Female facility,unknown,2
+Male facility,yes,68
+Male facility,no,4
+Male facility,unknown,2
+Wheelchair accessible,yes,48
+Wheelchair accessible,no,24
+Wheelchair accessible,unknown,2
+Baby change,yes,5
+Baby change,no,67
+Baby change,unknown,2
