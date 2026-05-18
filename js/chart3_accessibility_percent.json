@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 720,
-  "height": 260,
+  "width": 900,
+  "height": 340,
   "title": {
     "text": "Where are the access gaps?",
-    "subtitle": "Percentage split by yes, no and unknown for each feature"
+    "subtitle": "Percentage split by YES, NO and UNKNOWN for each toilet feature"
   },
   "data": {
     "url": "data/feature_status_percent.csv"
@@ -20,10 +20,7 @@
       "title": "Share of records (%)",
       "stack": "zero",
       "scale": {
-        "domain": [
-          0,
-          100
-        ]
+        "domain": [0, 100]
       }
     },
     "y": {
@@ -31,10 +28,10 @@
       "type": "nominal",
       "title": null,
       "sort": [
-        "Male facility",
-        "Female facility",
+        "Baby change",
         "Wheelchair accessible",
-        "Baby change"
+        "Female facility",
+        "Male facility"
       ]
     },
     "color": {
@@ -42,24 +39,23 @@
       "type": "nominal",
       "title": "Status",
       "scale": {
-        "domain": [
-          "yes",
-          "no",
-          "unknown"
-        ],
-        "range": [
-          "#2a9d8f",
-          "#e76f51",
-          "#9ca3af"
-        ]
+        "domain": ["yes", "no", "unknown"],
+        "range": ["#2a9d8f", "#e76f51", "#9ca3af"]
+      },
+      "legend": {
+        "orient": "bottom",
+        "direction": "horizontal",
+        "labelExpr": "datum.label == 'yes' ? 'YES' : datum.label == 'no' ? 'NO' : 'UNKNOWN'"
       }
     },
     "tooltip": [
       {
-        "field": "feature"
+        "field": "feature",
+        "title": "Feature"
       },
       {
-        "field": "status"
+        "field": "status",
+        "title": "Status"
       },
       {
         "field": "count",
@@ -73,11 +69,15 @@
   },
   "config": {
     "axis": {
-      "labelFontSize": 12,
-      "titleFontSize": 12
+      "labelFontSize": 13,
+      "titleFontSize": 13
     },
     "view": {
       "stroke": "transparent"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 12
     }
   }
 }
