@@ -24,11 +24,11 @@ p{font-size:17px; line-height:1.6;}
 <p>Public toilet accessibility in Melbourne</p>
 </header>
 <section>
-<div class="card"><h2>1. Where are the toilets?</h2><p>This map shows public toilets recorded in the City of Melbourne dataset. Colour highlights wheelchair accessibility.</p><div id="chart1"></div></div>
-<div class="card"><h2>2. What facilities are provided?</h2><p>Most toilets provide basic male and female facilities, while inclusive features vary more.</p><div id="chart2"></div></div>
-<div class="card"><h2>3. Which features are common?</h2><p>This chart compares the share of toilets that provide each selected feature.</p><div id="chart3"></div></div>
-<div class="card"><h2>4. Is access keeping up with population?</h2><p>This contextual chart uses the current toilet count and ABS population estimates for Melbourne LGA. It does not claim historical toilet counts; it shows how population growth can increase pressure on the existing network.</p><div id="chart4"></div></div>
-<p class="small">Data sources: City of Melbourne Public Toilets dataset; ABS Data by Region, Population and people, LGA, 2011–2024. Author: CHI KIU LU. Date: 2026.</p>
+<div class="card"><h2>1. Where are the toilets?</h2><p>This map shows the location of public toilets recorded in the City of Melbourne dataset. The points are zoomed in to make the CBD and nearby areas easier to read.</p><div id="chart1"></div></div>
+<div class="card"><h2>2. What facilities are provided?</h2><p>This chart counts only toilets where each facility is recorded as available. It makes the facility gaps easier to see than a stacked total chart.</p><div id="chart2"></div></div>
+<div class="card"><h2>3. Which features are common?</h2><p>This chart shows the percentage split between available, unavailable and unknown records. Baby-change facilities are the clearest gap.</p><div id="chart3"></div></div>
+<div class="card"><h2>4. Is access keeping up with population?</h2><p>This contextual chart keeps the current toilet count fixed at 74 and compares it with ABS population estimates. It does not claim historical toilet counts; it shows how a growing population can place more pressure on the existing network.</p><div id="chart4"></div></div>
+<p class="small">Data sources: City of Melbourne Public Toilets dataset; ABS Data by Region, Population and people, LGA, 2011–2024. Author: Rick Liu. Date: 2026.</p>
 </section>
 <script>
 vegaEmbed('#chart1','js/chart1_map.json',{actions:false});

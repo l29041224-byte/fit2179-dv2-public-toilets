@@ -1,0 +1,13 @@
+feature,status,count,total,percent
+Female facility,yes,61,74,82.4
+Female facility,no,11,74,14.9
+Female facility,unknown,2,74,2.7
+Male facility,yes,68,74,91.9
+Male facility,no,4,74,5.4
+Male facility,unknown,2,74,2.7
+Wheelchair accessible,yes,48,74,64.9
+Wheelchair accessible,no,24,74,32.4
+Wheelchair accessible,unknown,2,74,2.7
+Baby change,yes,5,74,6.8
+Baby change,no,67,74,90.5
+Baby change,unknown,2,74,2.7

@@ -1,57 +1,82 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 650,
-  "height": 300,
+  "width": 720,
+  "height": 260,
   "title": {
-    "text": "What facilities do Melbourne public toilets provide?",
-    "subtitle": "Count of toilets by facility feature"
+    "text": "How many toilets provide each facility?",
+    "subtitle": "Number of toilets marked as \u2018yes\u2019 in the dataset"
   },
   "data": {
-    "url": "data/feature_counts.csv"
+    "url": "data/feature_yes_counts.csv"
   },
-  "mark": {
-    "type": "bar",
-    "cornerRadiusEnd": 3
-  },
-  "encoding": {
-    "x": {
-      "field": "count",
-      "type": "quantitative",
-      "title": "Number of toilets"
-    },
-    "y": {
-      "field": "feature",
-      "type": "nominal",
-      "title": null,
-      "sort": "-x"
-    },
-    "color": {
-      "field": "status",
-      "type": "nominal",
-      "title": "Available?",
-      "scale": {
-        "domain": [
-          "yes",
-          "no",
-          "unknown"
-        ],
-        "range": [
-          "#2a9d8f",
-          "#e76f51",
-          "#9ca3af"
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 4,
+        "color": "#2a9d8f"
+      },
+      "encoding": {
+        "x": {
+          "field": "yes_count",
+          "type": "quantitative",
+          "title": "Number of toilets",
+          "scale": {
+            "domain": [
+              0,
+              74
+            ]
+          }
+        },
+        "y": {
+          "field": "feature",
+          "type": "nominal",
+          "title": null,
+          "sort": "-x"
+        },
+        "tooltip": [
+          {
+            "field": "feature"
+          },
+          {
+            "field": "yes_count",
+            "title": "Yes count"
+          }
         ]
       }
     },
-    "tooltip": [
-      {
-        "field": "feature"
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 5,
+        "fontSize": 12
       },
-      {
-        "field": "status"
-      },
-      {
-        "field": "count"
+      "encoding": {
+        "x": {
+          "field": "yes_count",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "feature",
+          "type": "nominal",
+          "sort": "-x"
+        },
+        "text": {
+          "field": "yes_count",
+          "type": "quantitative"
+        }
       }
-    ]
+    }
+  ],
+  "config": {
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    },
+    "view": {
+      "stroke": "transparent"
+    }
   }
 }

@@ -1,13 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 650,
-  "height": 300,
+  "width": 720,
+  "height": 260,
   "title": {
-    "text": "Which accessibility features are common?",
-    "subtitle": "Percentage of toilets with each feature, excluding unknown values"
+    "text": "Where are the access gaps?",
+    "subtitle": "Percentage split by yes, no and unknown for each feature"
   },
   "data": {
-    "url": "data/accessibility_percent.csv"
+    "url": "data/feature_status_percent.csv"
   },
   "mark": {
     "type": "bar",
@@ -15,9 +15,10 @@
   },
   "encoding": {
     "x": {
-      "field": "percent_yes",
+      "field": "percent",
       "type": "quantitative",
-      "title": "% of toilets with feature",
+      "title": "Share of records (%)",
+      "stack": "zero",
       "scale": {
         "domain": [
           0,
@@ -29,24 +30,54 @@
       "field": "feature",
       "type": "nominal",
       "title": null,
-      "sort": "-x"
+      "sort": [
+        "Male facility",
+        "Female facility",
+        "Wheelchair accessible",
+        "Baby change"
+      ]
+    },
+    "color": {
+      "field": "status",
+      "type": "nominal",
+      "title": "Status",
+      "scale": {
+        "domain": [
+          "yes",
+          "no",
+          "unknown"
+        ],
+        "range": [
+          "#2a9d8f",
+          "#e76f51",
+          "#9ca3af"
+        ]
+      }
     },
     "tooltip": [
       {
         "field": "feature"
       },
       {
-        "field": "yes_count",
-        "title": "Yes count"
+        "field": "status"
       },
       {
-        "field": "total_known",
-        "title": "Known records"
+        "field": "count",
+        "title": "Count"
       },
       {
-        "field": "percent_yes",
-        "title": "Percent yes"
+        "field": "percent",
+        "title": "Percent"
       }
     ]
+  },
+  "config": {
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    },
+    "view": {
+      "stroke": "transparent"
+    }
   }
 }

@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 760,
-  "height": 420,
+  "width": 800,
+  "height": 520,
   "title": {
-    "text": "Where are Melbourne’s public toilets?",
-    "subtitle": "Points are coloured by wheelchair accessibility"
+    "text": "Where are Melbourne\u2019s public toilets?",
+    "subtitle": "Each point is a public toilet; colour shows wheelchair accessibility"
   },
   "data": {
     "url": "data/public-toilets.geojson",
@@ -16,17 +16,17 @@
   "projection": {
     "type": "mercator",
     "center": [
-      144.965,
-      -37.812
+      144.956,
+      -37.809
     ],
-    "scale": 135000
+    "scale": 260000
   },
   "mark": {
     "type": "circle",
-    "size": 85,
-    "opacity": 0.85,
+    "size": 120,
+    "opacity": 0.9,
     "stroke": "white",
-    "strokeWidth": 0.8
+    "strokeWidth": 1
   },
   "encoding": {
     "longitude": {
@@ -52,6 +52,9 @@
           "#e76f51",
           "#9ca3af"
         ]
+      },
+      "legend": {
+        "orient": "right"
       }
     },
     "tooltip": [
@@ -61,12 +64,21 @@
       },
       {
         "field": "properties.wheelchair",
-        "title": "Wheelchair"
+        "title": "Wheelchair accessible"
       },
       {
         "field": "properties.baby_facil",
         "title": "Baby change"
+      },
+      {
+        "field": "properties.operator",
+        "title": "Operator"
       }
     ]
+  },
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
   }
 }
