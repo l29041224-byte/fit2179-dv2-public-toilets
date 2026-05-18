@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 650,
+  "height": 300,
+  "title": {
+    "text": "Melbourne is growing, so toilet access pressure increases",
+    "subtitle": "Current public toilet count compared with ABS annual population estimates"
+  },
+  "data": {
+    "url": "data/melbourne_population_context.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": true
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal",
+          "title": "Year"
+        },
+        "y": {
+          "field": "toilets_per_10000_people",
+          "type": "quantitative",
+          "title": "Current toilets per 10,000 people"
+        },
+        "tooltip": [
+          {
+            "field": "year"
+          },
+          {
+            "field": "population",
+            "format": ","
+          },
+          {
+            "field": "toilets_per_10000_people"
+          }
+        ]
+      }
+    }
+  ]
+}

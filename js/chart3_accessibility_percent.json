@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 650,
+  "height": 300,
+  "title": {
+    "text": "Which accessibility features are common?",
+    "subtitle": "Percentage of toilets with each feature, excluding unknown values"
+  },
+  "data": {
+    "url": "data/accessibility_percent.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 3
+  },
+  "encoding": {
+    "x": {
+      "field": "percent_yes",
+      "type": "quantitative",
+      "title": "% of toilets with feature",
+      "scale": {
+        "domain": [
+          0,
+          100
+        ]
+      }
+    },
+    "y": {
+      "field": "feature",
+      "type": "nominal",
+      "title": null,
+      "sort": "-x"
+    },
+    "tooltip": [
+      {
+        "field": "feature"
+      },
+      {
+        "field": "yes_count",
+        "title": "Yes count"
+      },
+      {
+        "field": "total_known",
+        "title": "Known records"
+      },
+      {
+        "field": "percent_yes",
+        "title": "Percent yes"
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 760,
+  "height": 420,
+  "title": {
+    "text": "Where are Melbourne’s public toilets?",
+    "subtitle": "Points are coloured by wheelchair accessibility"
+  },
+  "data": {
+    "url": "data/public-toilets.geojson",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
+  "projection": {
+    "type": "mercator",
+    "center": [
+      144.965,
+      -37.812
+    ],
+    "scale": 135000
+  },
+  "mark": {
+    "type": "circle",
+    "size": 85,
+    "opacity": 0.85,
+    "stroke": "white",
+    "strokeWidth": 0.8
+  },
+  "encoding": {
+    "longitude": {
+      "field": "properties.lon",
+      "type": "quantitative"
+    },
+    "latitude": {
+      "field": "properties.lat",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "properties.wheelchair",
+      "type": "nominal",
+      "title": "Wheelchair accessible",
+      "scale": {
+        "domain": [
+          "yes",
+          "no",
+          "U"
+        ],
+        "range": [
+          "#2a9d8f",
+          "#e76f51",
+          "#9ca3af"
+        ]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "properties.name",
+        "title": "Toilet"
+      },
+      {
+        "field": "properties.wheelchair",
+        "title": "Wheelchair"
+      },
+      {
+        "field": "properties.baby_facil",
+        "title": "Baby change"
+      }
+    ]
+  }
+}
