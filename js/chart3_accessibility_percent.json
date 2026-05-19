@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 900,
-  "height": 340,
+  "width": 850,
+  "height": 280,
   "title": {
     "text": "Where are the access gaps?",
-    "subtitle": "Percentage split by YES, NO and UNKNOWN for each toilet feature"
+    "subtitle": "Baby-change facilities have the largest unavailable share"
   },
   "data": {
     "url": "data/feature_status_percent.csv"
@@ -43,7 +43,7 @@
         "range": ["#2a9d8f", "#e76f51", "#9ca3af"]
       },
       "legend": {
-        "orient": "bottom",
+        "orient": "top",
         "direction": "horizontal",
         "labelExpr": "datum.label == 'yes' ? 'YES' : datum.label == 'no' ? 'NO' : 'UNKNOWN'"
       }
@@ -63,7 +63,8 @@
       },
       {
         "field": "percent",
-        "title": "Percent"
+        "title": "Percent",
+        "format": ".1f"
       }
     ]
   },

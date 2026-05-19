@@ -3,9 +3,9 @@
   "width": 900,
   "height": 380,
   "title": {
-    "text": "Is toilet access keeping up with population?",
-    "subtitle": "Current public toilet count compared with ABS annual population estimates for Melbourne LGA"
-  },
+  "text": "Population growth can increase pressure on toilet access",
+  "subtitle": "Current toilet count per 10,000 people, using ABS annual population estimates"
+},
   "data": {
     "url": "data/melbourne_population_context.csv"
   },
