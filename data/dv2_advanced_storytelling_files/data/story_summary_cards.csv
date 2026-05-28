@@ -1,0 +1,5 @@
+metric,value,note
+Pedestrian sensors used,101,Sensors with April 2026 pedestrian counts
+Busiest sensor,Town Hall (West),"1,295,924 pedestrians in April 2026"
+Longest distance among top 10,259 m,Distance from busy sensor to nearest public toilet
+Top 10 with no baby-change toilet within 300m,6,Shows inclusive access gap near busy locations

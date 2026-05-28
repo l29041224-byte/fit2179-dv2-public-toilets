@@ -1,0 +1,127 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 820,
+  "height": 320,
+  "title": {
+    "text": "How inclusive is each toilet?",
+    "subtitle": "Most toilets provide three selected features, while only a few provide all four"
+  },
+  "data": {
+    "url": "data/facility_score_distribution.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 2,
+        "color": "#cfd8dc"
+      },
+      "encoding": {
+        "x": {
+          "field": "label",
+          "type": "ordinal",
+          "title": "Number of available features",
+          "sort": [
+            "0 features",
+            "1 feature",
+            "2 features",
+            "3 features",
+            "4 features"
+          ],
+          "axis": {
+            "labelAngle": 0
+          }
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "title": "Number of toilets"
+        },
+        "y2": {
+          "datum": 0
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 520,
+        "color": "#2a9d8f",
+        "opacity": 0.9,
+        "stroke": "white",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "label",
+          "type": "ordinal",
+          "sort": [
+            "0 features",
+            "1 feature",
+            "2 features",
+            "3 features",
+            "4 features"
+          ],
+          "axis": {
+            "labelAngle": 0
+          }
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative",
+          "title": "Number of toilets"
+        },
+        "tooltip": [
+          {
+            "field": "label",
+            "title": "Feature score"
+          },
+          {
+            "field": "count",
+            "title": "Number of toilets"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dy": -18,
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#1f2933"
+      },
+      "encoding": {
+        "x": {
+          "field": "label",
+          "type": "ordinal",
+          "sort": [
+            "0 features",
+            "1 feature",
+            "2 features",
+            "3 features",
+            "4 features"
+          ]
+        },
+        "y": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "count",
+          "type": "quantitative"
+        }
+      }
+    }
+  ],
+  "config": {
+    "axis": {
+      "labelFontSize": 13,
+      "titleFontSize": 13,
+      "grid": true
+    },
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}

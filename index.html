@@ -8,50 +8,536 @@
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 <style>
-body{font-family:Arial, sans-serif; margin:0; background:#faf7f2; color:#252525;}
-header{padding:48px 8vw 28px; background:#20302a; color:white;}
-section{padding:34px 8vw; max-width:1100px; margin:auto;}
-.card{background:white; padding:24px; margin:24px 0; border-radius:16px; box-shadow:0 6px 20px rgba(0,0,0,.08);}
-h1{font-size:42px; margin:0 0 10px;}
-h2{font-size:26px; margin-top:0;}
-p{font-size:17px; line-height:1.6;}
-.small{font-size:13px;color:#555;}
+:root{
+  --bg:#f6f1ea;
+  --ink:#1f2933;
+  --muted:#5f6b73;
+  --card:#ffffff;
+  --green:#20302a;
+  --teal:#2a9d8f;
+  --orange:#e76f51;
+  --blue:#4c78a8;
+  --line:#e8dfd4;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  margin:0;
+  background:
+    radial-gradient(circle at top left, rgba(42,157,143,0.10), transparent 28%),
+    linear-gradient(180deg, #fbf7f0 0%, var(--bg) 100%);
+  color:var(--ink);
+}
+
+header{
+  padding:64px 8vw 48px;
+  background:
+    linear-gradient(135deg, #17231f 0%, #20302a 55%, #2f4a40 100%);
+  color:white;
+}
+
+.hero{
+  max-width:1450px;
+  margin:auto;
+}
+
+.kicker{
+  display:inline-block;
+  font-size:13px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:#cce8df;
+  margin-bottom:14px;
+  font-weight:700;
+}
+
+h1{
+  font-size:56px;
+  line-height:1.05;
+  margin:0 0 16px;
+  max-width:850px;
+}
+
+.subtitle{
+  font-size:20px;
+  line-height:1.6;
+  max-width:850px;
+  color:#e8f4ef;
+  margin:0;
+}
+
+section{
+  padding:36px 3vw 56px;
+  max-width:1680px;
+  margin:auto;
+}
+
+.story-intro{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:28px 32px;
+  margin-top:-24px;
+  box-shadow:0 18px 45px rgba(31,41,51,0.12);
+}
+
+.story-intro h2{
+  margin:0 0 12px;
+  font-size:28px;
+}
+
+.story-intro p{
+  margin:8px 0;
+  color:var(--muted);
+}
+
+.divider-title{
+  margin:46px 0 18px;
+  padding-top:10px;
+  border-top:1px solid var(--line);
+}
+
+.divider-title h2{
+  margin:0;
+  font-size:28px;
+}
+
+.divider-title p{
+  margin:8px 0 0;
+  color:var(--muted);
+}
+
+.card{
+  background:var(--card);
+  padding:34px 40px;
+  margin:30px 0;
+  border-radius:22px;
+  border:1px solid rgba(232,223,212,0.95);
+  box-shadow:0 12px 32px rgba(31,41,51,0.08);
+  overflow-x:auto;
+}
+
+.story-row{
+  display:grid;
+  grid-template-columns: 25% 75%;
+  gap:28px;
+  margin:34px 0;
+  align-items:stretch;
+}
+
+.text-card{
+  background:white;
+  padding:30px;
+  border-radius:22px;
+  border:1px solid rgba(232,223,212,0.95);
+  box-shadow:0 12px 32px rgba(31,41,51,0.08);
+  min-height:520px;
+}
+
+.chart-card{
+  background:white;
+  padding:30px 34px;
+  border-radius:22px;
+  border:1px solid rgba(232,223,212,0.95);
+  box-shadow:0 12px 32px rgba(31,41,51,0.08);
+  overflow-x:auto;
+  min-height:520px;
+}
+
+.text-card h2{
+  font-size:27px;
+  line-height:1.25;
+  margin:0 0 16px;
+  color:#15211d;
+}
+
+.text-card p{
+  font-size:16px;
+  line-height:1.6;
+  color:#303b42;
+}
+
+.text-card.featured{
+  border-left:8px solid var(--teal);
+}
+
+.text-card.warning{
+  border-left:8px solid var(--orange);
+}
+
+.text-card.decision{
+  border-left:8px solid var(--blue);
+}
+
+@media(max-width:900px){
+  .story-row{
+    grid-template-columns:1fr;
+  }
+}
+
+.story-card{
+  display:grid;
+  grid-template-columns: 32% 68%;
+  gap:28px;
+  align-items:start;
+}
+
+.story-text{
+  padding-right:8px;
+}
+
+.story-text h2{
+  margin-top:0;
+}
+
+.story-chart{
+  min-width:0;
+  overflow-x:auto;
+}
+
+.story-chart > div{
+  width:100%;
+}
+
+@media(max-width:900px){
+  .story-card{
+    grid-template-columns:1fr;
+  }
+}
+
+.vega-embed{
+  max-width:100%;
+}
+.vega-embed svg{
+  overflow:visible;
+}
+
+.card.featured{
+  border-left:8px solid var(--teal);
+}
+
+.card.warning{
+  border-left:8px solid var(--orange);
+}
+
+.card.decision{
+  border-left:8px solid var(--blue);
+}
+
+.card h2{
+  font-size:30px;
+  line-height:1.25;
+  margin:0 0 16px;
+  color:#15211d;
+}
+
+.card p{
+  font-size:17px;
+  line-height:1.65;
+  color:#303b42;
+}
+
+.note{
+  max-width:900px;
+  margin-bottom:22px;
+}
+
+.note span{
+  display:block;
+  margin-bottom:7px;
+}
+
+.insight-box{
+  background:#f8fbfa;
+  border:1px solid #d9eee8;
+  border-radius:16px;
+  padding:16px 18px;
+  margin:16px 0 22px;
+  color:#24433b;
+}
+
+.insight-box strong{
+  color:#1c6b61;
+}
+
+.grid-two{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+
+.small{
+  font-size:13px;
+  color:#6b7280;
+  line-height:1.7;
+}
+
+.footer{
+  border-top:1px solid var(--line);
+  padding-top:22px;
+  margin-top:40px;
+}
+
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+}
+
+.badge{
+  font-size:13px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:#ecf7f4;
+  color:#1d635a;
+  font-weight:700;
+}
+
+@media(max-width:800px){
+  h1{
+    font-size:40px;
+  }
+
+  header{
+    padding:48px 6vw 40px;
+  }
+
+  section{
+    padding:28px 5vw 44px;
+  }
+
+  .grid-two{
+    grid-template-columns:1fr;
+  }
+
+  .card{
+    padding:22px;
+  }
+}
 </style>
 </head>
 <body>
 <header>
-<h1>When Nature Calls</h1>
-<p>Public toilet accessibility in Melbourne</p>
+  <div class="hero">
+    <div class="kicker">FIT2179 Data Visualisation 2</div>
+    <h1>When Nature Calls</h1>
+    <p class="subtitle">
+      A data story about public toilet accessibility, pedestrian demand and inclusive facility gaps in Melbourne.
+    </p>
+    <div class="badges">
+      <span class="badge">Vega-Lite maps</span>
+      <span class="badge">City of Melbourne data</span>
+      <span class="badge">Pedestrian demand</span>
+      <span class="badge">Accessibility focus</span>
+    </div>
+  </div>
 </header>
 <section>
-<div class="card"><h2>1. Where are the toilets?</h2><p>This map shows the location of public toilets recorded in the City of Melbourne dataset. The points are zoomed in to make the CBD and nearby areas easier to read.</p><div id="chart1"></div></div>
-<div class="card"><h2>2. What facilities are provided?</h2><p>This chart counts only toilets where each facility is recorded as available. It makes the facility gaps easier to see than a stacked total chart.</p><div id="chart2"></div></div>
-<div class="card">
-  <h2>3. Where are the access gaps?</h2>
+  <div class="story-intro">
+  <h2>Story focus</h2>
   <p>
-    This chart compares available, unavailable and unknown records for each facility type.
-    Baby-change facilities show the clearest gap, while male and female facilities are more commonly available.
+    Public toilets are small pieces of infrastructure, but they shape how comfortable and inclusive a city feels.
   </p>
-  <div id="chart3"></div>
+  <p>
+    This visualisation asks whether Melbourne’s public toilets are located near busy places and whether they support different users.
+  </p>
 </div>
 
-<div class="card">
-  <h2>4. Is access keeping up with population?</h2>
+<div class="divider-title">
+  <h2>The supply: Where are toilets and what do they provide?</h2>
   <p>
-    This chart uses the current public toilet count and ABS population estimates for Melbourne LGA.
-    It does not show historical toilet construction or yearly toilet counts.
-    Instead, it shows how population growth can increase pressure on the existing toilet network if the number of toilets does not keep pace.
+    The first part of the story looks at Melbourne’s public toilet network.
+    It shows where toilets are located and whether they provide basic and inclusive facilities.
   </p>
-  <div id="chart4"></div>
 </div>
 
-<p class="small">Data sources: City of Melbourne Public Toilets dataset; ABS Data by Region, Population and people, LGA, 2011–2024. Author: Rick Liu. Date: 2026.</p>
+<div class="story-row">
+  <div class="text-card featured">
+    <h2>1. Where are the toilets?</h2>
+    <p class="note">
+      <span>This map shows public toilets recorded in the City of Melbourne dataset.</span>
+      <span>The boundary shows the City of Melbourne municipal area.</span>
+      <span>Each point is coloured by wheelchair accessibility.</span>
+    </p>
+  </div>
+  <div class="chart-card">
+    <div id="chart1"></div>
+  </div>
+</div>
+
+<div class="story-row">
+  <div class="text-card">
+    <h2>2. What facilities are provided?</h2>
+    <p class="note">
+      <span>This chart counts toilets where each facility is recorded as available.</span>
+      <span>It shows which facilities are common and which are less common.</span>
+      <span>Baby-change facilities are much less available than basic male and female facilities.</span>
+    </p>
+  </div>
+  <div class="chart-card">
+    <div id="chart2"></div>
+  </div>
+</div>
+
+<div class="divider-title">
+  <h2>The gap: Not every toilet supports every user</h2>
+  <p>
+    Counting toilets is not enough.
+    A useful public toilet network also needs to support people with disability, families with children and different everyday needs.
+  </p>
+</div>
+
+<div class="story-row">
+  <div class="text-card warning">
+    <h2>3. Where are the access gaps?</h2>
+    <p class="note">
+      <span>This chart compares available, unavailable and unknown records.</span>
+      <span>Baby-change facilities show the clearest gap.</span>
+      <span>Wheelchair access is available in many locations, but not all.</span>
+    </p>
+    <div class="insight-box">
+      <strong>Key insight:</strong>
+      Baby-change facilities are the clearest inclusion gap in the current toilet dataset.
+    </div>
+  </div>
+  <div class="chart-card">
+    <div id="chart3"></div>
+  </div>
+</div>
+
+<div class="story-row">
+  <div class="text-card decision">
+    <h2>4. Is access keeping up with population?</h2>
+    <p class="note">
+      <span>This chart uses the current public toilet count.</span>
+      <span>It compares this count with ABS population estimates for Melbourne LGA.</span>
+      <span>It does not show historical toilet construction or yearly toilet counts.</span>
+      <span>It shows how population growth can increase pressure on the existing network.</span>
+    </p>
+  </div>
+  <div class="chart-card">
+    <div id="chart4"></div>
+  </div>
+</div>
+
+
+
+<div class="story-row">
+  <div class="text-card">
+    <h2>5. How inclusive is each toilet?</h2>
+    <p class="note">
+      <span>This lollipop chart counts how many selected facilities each toilet provides.</span>
+      <span>Most toilets provide three selected features.</span>
+      <span>Only a small number provide all four features.</span>
+    </p>
+  </div>
+  <div class="chart-card">
+    <div id="chart5"></div>
+  </div>
+</div>
+
+<div class="story-row">
+  <div class="text-card">
+    <h2>6. Which types of places have more toilets?</h2>
+    <p class="note">
+      <span>This chart groups toilet names into simple place categories.</span>
+      <span>Street locations and parks are the most common categories.</span>
+      <span>This suggests that toilets support both daily movement and public recreation.</span>
+    </p>
+  </div>
+  <div class="chart-card">
+    <div id="chart6"></div>
+  </div>
+</div>
+
+<div class="story-row">
+  <div class="text-card featured">
+    <h2>7. Where is likely demand highest?</h2>
+    <p class="note">
+      <span>This map uses pedestrian activity as a demand signal.</span>
+      <span>Larger circles show busier pedestrian locations.</span>
+      <span>The colour shows the distance to the nearest public toilet.</span>
+    </p>
+    <div class="insight-box">
+      <strong>Why this matters:</strong>
+      Public toilet demand is better understood by looking at where people move, not only where residents live.
+    </div>
+  </div>
+  <div class="chart-card">
+    <div id="chart7"></div>
+  </div>
+</div>
+
+<div class="story-row">
+  <div class="text-card">
+    <h2>8. How far are busy places from a toilet?</h2>
+    <p class="note">
+      <span>This lollipop chart ranks busy pedestrian locations by distance to the nearest toilet.</span>
+      <span>Shorter distance suggests better immediate access.</span>
+      <span>Longer distance suggests locations that may need closer checking.</span>
+    </p>
+  </div>
+  <div class="chart-card">
+    <div id="chart8"></div>
+  </div>
+</div>
+
+<div class="divider-title">
+  <h2>The decision: Where should attention go first?</h2>
+  <p>
+    The final step combines demand and access.
+    Locations with high pedestrian activity and longer distance to toilets become possible priority areas for closer review.
+  </p>
+</div>
+
+<div class="story-row">
+  <div class="text-card decision">
+    <h2>9. Which locations should be checked first?</h2>
+    <p class="note">
+      <span>This quadrant chart compares pedestrian demand with nearest toilet distance.</span>
+      <span>Locations with high demand and longer distance are potential priority areas.</span>
+      <span>This helps move the visualisation from description to decision support.</span>
+    </p>
+    <div class="insight-box">
+      <strong>Decision focus:</strong>
+      Locations with high pedestrian activity and longer toilet distance should be checked first.
+    </div>
+  </div>
+  <div class="chart-card">
+    <div id="chart9"></div>
+  </div>
+</div>
+
+<div class="story-row">
+  <div class="text-card warning">
+    <h2>10. Are busy places also inclusive?</h2>
+    <p class="note">
+      <span>This heatmap checks whether busy locations have inclusive toilet access nearby.</span>
+      <span>It considers toilets within 300 metres of each pedestrian location.</span>
+      <span>Baby-change access is more limited than general toilet access.</span>
+    </p>
+  </div>
+  <div class="chart-card">
+    <div id="chart10"></div>
+  </div>
+</div>
 </section>
 <script>
 vegaEmbed('#chart1','js/chart1_map.json',{actions:false});
 vegaEmbed('#chart2','js/chart2_feature_counts.json',{actions:false});
 vegaEmbed('#chart3','js/chart3_accessibility_percent.json',{actions:false});
 vegaEmbed('#chart4','js/chart4_population_context.json',{actions:false});
+vegaEmbed('#chart5','js/chart5_facility_score.json',{actions:false});
+vegaEmbed('#chart6','js/chart6_place_category.json',{actions:false});
+vegaEmbed('#chart7','js/chart7.json',{actions:false});
+vegaEmbed('#chart8','js/chart8.json',{actions:false});
+vegaEmbed('#chart9','js/chart9.json',{actions:false});
+vegaEmbed('#chart10','js/chart10.json',{actions:false});
 </script>
 </body>
 </html>

@@ -24,7 +24,10 @@
         "x": {
           "field": "year",
           "type": "ordinal",
-          "title": "Year"
+          "title": "Year",
+          "axis": {
+            "labelAngle": 0
+          }
         },
         "y": {
           "field": "toilets_per_10000_people",

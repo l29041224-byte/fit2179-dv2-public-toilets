@@ -1,0 +1,37 @@
+sensor,feature,count,available
+Town Hall (West),Any toilet nearby,3,YES
+Town Hall (West),Wheelchair nearby,2,YES
+Town Hall (West),Baby change nearby,1,YES
+Flinders La-Swanston St (Wes,Any toilet nearby,2,YES
+Flinders La-Swanston St (Wes,Wheelchair nearby,2,YES
+Flinders La-Swanston St (Wes,Baby change nearby,1,YES
+Melbourne Central,Any toilet nearby,2,YES
+Melbourne Central,Wheelchair nearby,0,NO
+Melbourne Central,Baby change nearby,0,NO
+State Library - New,Any toilet nearby,1,YES
+State Library - New,Wheelchair nearby,0,NO
+State Library - New,Baby change nearby,0,NO
+Elizabeth St - Flinders St (,Any toilet nearby,2,YES
+Elizabeth St - Flinders St (,Wheelchair nearby,2,YES
+Elizabeth St - Flinders St (,Baby change nearby,0,NO
+Princes Bridge,Any toilet nearby,2,YES
+Princes Bridge,Wheelchair nearby,2,YES
+Princes Bridge,Baby change nearby,0,NO
+368 Elizabeth Street,Any toilet nearby,1,YES
+368 Elizabeth Street,Wheelchair nearby,1,YES
+368 Elizabeth Street,Baby change nearby,0,NO
+Little Collins St-Swanston S,Any toilet nearby,4,YES
+Little Collins St-Swanston S,Wheelchair nearby,2,YES
+Little Collins St-Swanston S,Baby change nearby,1,YES
+Building 80 RMIT,Any toilet nearby,3,YES
+Building 80 RMIT,Wheelchair nearby,1,YES
+Building 80 RMIT,Baby change nearby,0,NO
+124 Elizabeth Street,Any toilet nearby,4,YES
+124 Elizabeth Street,Wheelchair nearby,2,YES
+124 Elizabeth Street,Baby change nearby,1,YES
+Melbourne Central-Elizabeth ,Any toilet nearby,3,YES
+Melbourne Central-Elizabeth ,Wheelchair nearby,1,YES
+Melbourne Central-Elizabeth ,Baby change nearby,0,NO
+Spencer St-Collins St (North,Any toilet nearby,0,NO
+Spencer St-Collins St (North,Wheelchair nearby,0,NO
+Spencer St-Collins St (North,Baby change nearby,0,NO

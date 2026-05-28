@@ -1,0 +1,116 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 820,
+  "height": 420,
+  "title": {
+    "text": "How far are busy places from a toilet?",
+    "subtitle": "Top 10 pedestrian locations ranked by distance to the nearest public toilet"
+  },
+  "data": {
+    "url": "data/top10_busy_sensor_access.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 2,
+        "color": "#cfd8dc"
+      },
+      "encoding": {
+        "y": {
+          "field": "sensor_description",
+          "type": "nominal",
+          "title": null,
+          "sort": "-x",
+          "axis": {
+            "labelLimit": 260
+          }
+        },
+        "x": {
+          "field": "nearest_distance_m",
+          "type": "quantitative",
+          "title": "Distance to nearest public toilet (metres)"
+        },
+        "x2": {
+          "datum": 0
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "size": 260,
+        "color": "#4c78a8",
+        "opacity": 0.9,
+        "stroke": "white",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "y": {
+          "field": "sensor_description",
+          "type": "nominal",
+          "sort": "-x"
+        },
+        "x": {
+          "field": "nearest_distance_m",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "sensor_description",
+            "title": "Location"
+          },
+          {
+            "field": "total_pedestrians",
+            "title": "April pedestrian total",
+            "format": ","
+          },
+          {
+            "field": "nearest_distance_m",
+            "title": "Nearest toilet distance (m)",
+            "format": ".0f"
+          },
+          {
+            "field": "toilets_within_300m",
+            "title": "Toilets within 300m"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 8,
+        "fontSize": 12,
+        "color": "#1f2933"
+      },
+      "encoding": {
+        "y": {
+          "field": "sensor_description",
+          "type": "nominal",
+          "sort": "-x"
+        },
+        "x": {
+          "field": "nearest_distance_m",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "nearest_distance_m",
+          "type": "quantitative",
+          "format": ".0f"
+        }
+      }
+    }
+  ],
+  "config": {
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    },
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}

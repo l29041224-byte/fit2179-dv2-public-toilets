@@ -1,0 +1,84 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 720,
+  "height": 360,
+  "title": {
+    "text": "Are busy places also inclusive?",
+    "subtitle": "Nearby toilet features within 300 metres of the 12 busiest pedestrian sensors"
+  },
+  "data": {
+    "url": "data/inclusive_access_heatmap.csv"
+  },
+  "mark": {
+    "type": "rect",
+    "stroke": "white",
+    "strokeWidth": 1
+  },
+  "encoding": {
+    "x": {
+      "field": "feature",
+      "type": "nominal",
+      "title": null,
+      "sort": [
+        "Any toilet nearby",
+        "Wheelchair nearby",
+        "Baby change nearby"
+      ],
+      "axis": {
+        "labelAngle": 0,
+        "labelFontSize": 12
+      }
+    },
+    "y": {
+      "field": "sensor",
+      "type": "nominal",
+      "title": null,
+      "axis": {
+        "labelFontSize": 11,
+        "labelLimit": 180
+      }
+    },
+    "color": {
+      "field": "count",
+      "type": "quantitative",
+      "title": "Nearby count",
+      "scale": {
+        "scheme": "tealblues"
+      },
+      "legend": {
+        "orient": "right"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "sensor",
+        "title": "Sensor"
+      },
+      {
+        "field": "feature",
+        "title": "Feature"
+      },
+      {
+        "field": "count",
+        "title": "Nearby count"
+      },
+      {
+        "field": "available",
+        "title": "Available?"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    },
+    "view": {
+      "stroke": "transparent"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    }
+  }
+}

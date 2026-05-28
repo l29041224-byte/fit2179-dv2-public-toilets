@@ -1,0 +1,133 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 850,
+  "height": 460,
+  "title": {
+    "text": "Which locations should be checked first?",
+    "subtitle": "Priority rises when pedestrian demand is high and the nearest toilet is farther away"
+  },
+  "data": {
+    "url": "data/priority_quadrant.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "circle",
+        "opacity": 0.75,
+        "stroke": "white",
+        "strokeWidth": 0.6
+      },
+      "encoding": {
+        "x": {
+          "field": "total_pedestrians",
+          "type": "quantitative",
+          "title": "April pedestrian total",
+          "axis": {
+            "format": "~s"
+          }
+        },
+        "y": {
+          "field": "nearest_distance_m",
+          "type": "quantitative",
+          "title": "Distance to nearest toilet (m)"
+        },
+        "size": {
+          "field": "priority_score",
+          "type": "quantitative",
+          "title": "Priority score",
+          "scale": {
+            "range": [
+              50,
+              900
+            ]
+          }
+        },
+        "color": {
+          "field": "priority_group",
+          "type": "nominal",
+          "title": "Priority group",
+          "scale": {
+            "domain": [
+              "High priority",
+              "Medium priority",
+              "Lower priority"
+            ],
+            "range": [
+              "#e76f51",
+              "#f4a261",
+              "#2a9d8f"
+            ]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "sensor_description",
+            "title": "Sensor"
+          },
+          {
+            "field": "total_pedestrians",
+            "title": "April pedestrians",
+            "format": ","
+          },
+          {
+            "field": "nearest_distance_m",
+            "title": "Nearest toilet distance (m)",
+            "format": ".0f"
+          },
+          {
+            "field": "toilets_within_300m",
+            "title": "Toilets within 300m"
+          },
+          {
+            "field": "priority_score",
+            "title": "Priority score"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "x": 700000,
+            "y": 220,
+            "label": "High demand + longer distance"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#e76f51"
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    }
+  ],
+  "config": {
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 13
+    },
+    "view": {
+      "stroke": "transparent"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    }
+  }
+}

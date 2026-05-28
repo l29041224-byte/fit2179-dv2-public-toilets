@@ -1,0 +1,120 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 820,
+  "height": 620,
+  "title": {
+    "text": "Where is public toilet demand likely to be highest?",
+    "subtitle": "Pedestrian sensor totals for April 2026; larger circles show higher pedestrian activity"
+  },
+  "projection": {
+    "type": "mercator",
+    "center": [
+      144.96,
+      -37.81
+    ],
+    "scale": 240000
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "data/melbourne_boundary.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f1f3f5",
+        "stroke": "#6b7280",
+        "strokeWidth": 1.5
+      }
+    },
+    {
+      "data": {
+        "url": "data/pedestrian_toilet_access.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "opacity": 0.72,
+        "stroke": "white",
+        "strokeWidth": 0.6
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "total_pedestrians",
+          "type": "quantitative",
+          "title": "April pedestrian total",
+          "scale": {
+            "range": [
+              40,
+              900
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal"
+          }
+        },
+        "color": {
+          "field": "demand_level",
+          "type": "nominal",
+          "title": "Demand level",
+          "scale": {
+            "domain": [
+              "Low demand",
+              "Medium demand",
+              "High demand"
+            ],
+            "range": [
+              "#9ca3af",
+              "#f4a261",
+              "#e76f51"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "sensor_description",
+            "title": "Sensor"
+          },
+          {
+            "field": "total_pedestrians",
+            "title": "April pedestrians",
+            "format": ","
+          },
+          {
+            "field": "nearest_distance_m",
+            "title": "Nearest toilet distance (m)",
+            "format": ".0f"
+          },
+          {
+            "field": "toilets_within_300m",
+            "title": "Toilets within 300m"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    }
+  }
+}

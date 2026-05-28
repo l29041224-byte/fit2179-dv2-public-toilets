@@ -1,0 +1,102 @@
+sensor_description,longitude,latitude,total_pedestrians,avg_hourly_count,nearest_distance_m,toilets_within_300m,wheelchair_toilets_within_300m,baby_change_toilets_within_300m,priority_score,priority_group,demand_level,access_gap_level
+Melbourne Central,144.96429485,-37.81101524,1066037,1480.6,259.4,2,0,0,92.0,High priority,High demand,Moderate distance
+Princes Bridge,144.96787656,-37.81874249,820970,1141.8,169.6,2,2,0,73.9,Medium priority,High demand,Moderate distance
+Southern Cross Station,144.95102555,-37.81982992,389994,542.4,385.1,0,0,0,86.6,High priority,High demand,Longer distance
+New Quay,144.94292398,-37.81457988,131247,198.0,111.8,1,1,0,36.3,Lower priority,Medium demand,Close toilet
+Sandridge Bridge,144.96291897,-37.82011242,180687,320.4,117.1,2,2,0,44.4,Lower priority,Medium demand,Close toilet
+Collins Place (North),144.97305353,-37.81344862,163535,245.5,154.0,3,1,0,47.1,Lower priority,Medium demand,Moderate distance
+Chinatown-Swanston St (North),144.96550671,-37.81237202,446089,619.6,156.0,3,1,0,64.3,Medium priority,High demand,Moderate distance
+Chinatown-Lt Bourke St (South),144.9682466,-37.81172914,290394,403.9,206.1,3,2,0,59.8,Medium priority,Medium demand,Moderate distance
+QV Market-Peel St,144.95644692,-37.80606888,102224,142.8,9.9,4,1,1,17.2,Lower priority,Low demand,Close toilet
+Flinders La-Swanston St (West),144.96689733,-37.81668634,1285836,1785.9,146.3,2,2,1,61.7,Medium priority,High demand,Close toilet
+Monash Rd-Swanston St (West),144.96411782,-37.79844526,141261,200.4,306.8,0,0,0,65.2,Medium priority,Medium demand,Longer distance
+Tin Alley-Swanston St (West),144.96441306,-37.79698741,68193,98.7,338.8,0,0,0,58.9,Medium priority,Low demand,Longer distance
+Pelham St (South),144.9615673,-37.80240719,61574,107.1,70.3,3,1,0,23.2,Lower priority,Low demand,Close toilet
+Melbourne Central-Elizabeth St (East),144.9625775,-37.81258467,674046,937.5,99.7,3,1,0,61.6,Medium priority,High demand,Close toilet
+QVM-Queen St (East),144.95866697,-37.80631581,168273,373.9,35.1,6,2,1,26.3,Lower priority,Medium demand,Close toilet
+Faraday St-Lygon St (West),144.96721013,-37.79808192,159848,225.5,77.5,1,0,0,47.1,Lower priority,Medium demand,Close toilet
+QVM-Franklin St (North),144.95906316,-37.80841815,99745,139.3,100.8,4,2,1,22.2,Lower priority,Low demand,Close toilet
+Elizabeth St-Lonsdale St (South),144.9619401,-37.81252157,254655,361.2,133.7,3,1,0,49.7,Lower priority,Medium demand,Close toilet
+Collins Street (North),144.965499,-37.81564191,487450,680.8,135.4,4,3,1,52.9,Medium priority,High demand,Close toilet
+Lincoln-Swanston (West),144.96308399,-37.804024,93246,168.6,71.5,2,1,0,28.2,Lower priority,Low demand,Close toilet
+Lonsdale St - Elizabeth St (North),144.96153311,-37.81234775,315804,455.0,148.6,3,1,0,55.4,Medium priority,Medium demand,Close toilet
+Flinders Ln -Degraves St (North),144.96559789,-37.8168479,267702,390.8,131.1,2,2,1,40.1,Lower priority,Medium demand,Close toilet
+Flinders Ln -Degraves St (Crossing),144.96559144,-37.81687226,200340,286.6,129.0,2,2,1,36.3,Lower priority,Medium demand,Close toilet
+Flinders St- ACMI,144.96872809,-37.81726338,238356,333.4,227.8,3,3,1,48.5,Lower priority,Medium demand,Moderate distance
+Macaulay Rd (North),144.92973378,-37.79432415,70438,106.9,85.3,1,1,0,27.4,Lower priority,Low demand,Close toilet
+Queensberry St - Errol St (South),144.94908064,-37.80309992,40684,62.4,69.0,2,0,0,27.6,Lower priority,Low demand,Close toilet
+Flagstaff station (East),144.95690188,-37.81246271,109334,152.7,261.5,2,2,0,50.3,Medium priority,Low demand,Moderate distance
+114 Flinders Street Car Park Footpath,144.97090877,-37.81629332,151991,220.0,169.4,3,2,0,46.7,Lower priority,Medium demand,Moderate distance
+Birrarung Marr East - Batman Ave Bridge Entry,144.97329734,-37.81753741,22395,46.9,177.6,2,1,0,29.7,Lower priority,Low demand,Moderate distance
+I-Hub Corner of King Street and Latrobe Street (317-335 King),144.95386444,-37.81267639,138671,193.7,215.8,1,1,0,48.8,Lower priority,Medium demand,Moderate distance
+I-Hub Southern Cross Station - Lonsdale Street Entrance - South,144.95227769,-37.81531435,501906,701.0,271.8,1,1,0,76.1,High priority,High demand,Moderate distance
+"COM Pole 1120 - Towards the City, Near Federation Square Bridge",144.97357915,-37.8184141,101539,167.0,217.1,3,2,0,45.1,Lower priority,Low demand,Moderate distance
+COM Pole 1647 - Sandridge Bridge Signal Box,144.9632832,-37.81959923,58565,85.4,116.6,2,2,0,27.2,Lower priority,Low demand,Close toilet
+COM Pole 2837 - Boyd Park,144.96185972,-37.82590962,63922,164.3,545.1,0,0,0,60.9,Medium priority,Low demand,Longer distance
+COM Pole 1584 - Hammer Hall Entrance,144.96795734,-37.81970749,370448,521.8,249.7,2,2,0,67.8,Medium priority,High demand,Moderate distance
+Birrarung Marr - COM - Pole 1109,144.97131336,-37.81851276,176305,252.6,24.3,2,2,0,36.7,Lower priority,Medium demand,Close toilet
+475 Spencer Street,144.94939004,-37.80953359,26982,42.2,501.1,0,0,0,52.9,Medium priority,Low demand,Longer distance
+368 Elizabeth Street,144.96143149,-37.81009465,797805,1108.1,234.1,1,1,0,78.4,High priority,High demand,Moderate distance
+RMIT Building 51 - 80-92 Victoria Street,144.96456557,-37.80663222,79158,145.8,169.5,3,0,0,49.3,Lower priority,Low demand,Moderate distance
+Docklands Waterfront City Waterside,144.93978108,-37.8157484,52562,76.6,227.6,1,1,0,37.9,Lower priority,Low demand,Moderate distance
+Town Hall (West),144.9660878,-37.81487988,1295924,1799.9,83.9,3,2,1,54.8,Medium priority,High demand,Close toilet
+Flinders Underpass - Myki Barriers,144.96557866,-37.81907439,328799,457.3,143.5,2,2,0,55.0,Medium priority,Medium demand,Close toilet
+Victoria Point,144.94710545,-37.81876474,63902,90.6,333.8,0,0,0,57.1,Medium priority,Low demand,Longer distance
+Collins Place (South),144.97323591,-37.81362543,305958,424.9,165.4,3,1,0,57.0,Medium priority,Medium demand,Moderate distance
+Spencer St-Collins St (North),144.95449198,-37.81887963,662596,920.3,330.0,0,0,0,90.7,High priority,High demand,Longer distance
+Lygon St (West),144.96658911,-37.80169681,159748,223.4,44.6,1,1,0,34.7,Lower priority,Medium demand,Close toilet
+Queen St (West),144.96121062,-37.81652527,161001,224.2,77.5,2,2,0,37.6,Lower priority,Medium demand,Close toilet
+Alfred Place,144.96995745,-37.81379749,65586,104.9,124.6,2,2,0,30.9,Lower priority,Low demand,Close toilet
+Little Collins St-Swanston St (East),144.96609379,-37.81414075,719989,1000.0,122.0,4,2,1,55.4,Medium priority,High demand,Close toilet
+QVM-Therry St (South),144.95956055,-37.80730068,281390,390.8,89.2,6,2,1,36.5,Lower priority,Medium demand,Close toilet
+Bourke St - Spencer St (North),144.95358075,-37.81686075,369944,665.4,310.6,0,0,0,80.9,High priority,High demand,Longer distance
+Building 80 RMIT,144.96304859,-37.80825648,709050,1048.9,165.1,3,1,0,70.6,Medium priority,High demand,Moderate distance
+RMIT Building 14,144.96309114,-37.80767455,395210,552.0,104.1,3,1,0,56.2,Medium priority,High demand,Close toilet
+La Trobe St (North),144.96216521,-37.80996494,249804,348.9,259.4,1,1,0,61.2,Medium priority,Medium demand,Moderate distance
+Spring St- Flinders st (West),144.97467661,-37.81515276,32690,67.8,189.4,2,1,0,31.8,Lower priority,Low demand,Moderate distance
+Harbour Esplanade (West) - Pedestrian path,144.94433026,-37.81441438,95765,209.1,232.7,1,1,0,45.9,Lower priority,Low demand,Moderate distance
+Flinders St (South),144.96616678,-37.81794046,392081,547.6,9.5,1,1,0,49.2,Lower priority,High demand,Close toilet
+Elizabeth St - Flinders St (East) - New footpath,144.96503383,-37.81798049,858403,1198.9,108.4,2,2,0,65.7,Medium priority,High demand,Close toilet
+Errol St (West),144.94921863,-37.80454949,76642,115.3,173.2,2,0,0,49.8,Lower priority,Low demand,Moderate distance
+William St - Little Lonsdale St (West),144.95678789,-37.81295822,344044,480.5,212.9,2,2,0,62.4,Medium priority,High demand,Moderate distance
+La Trobe St- William St (South),144.95621105,-37.81193681,134400,187.7,284.5,1,1,0,53.2,Medium priority,Medium demand,Moderate distance
+Birrarung Marr East - Batman Ave Bridge Entry,144.97329934,-37.81757416,886,3.5,181.6,2,1,0,28.0,Lower priority,Low demand,Moderate distance
+I-Hub Southern Cross Station - Bourke Street Entrance - South,144.95319102,-37.8172861,357110,498.8,368.2,0,0,0,82.4,High priority,High demand,Longer distance
+"COM Pole 2353 - Towards the city, NAB Building",144.94612292,-37.81894815,53408,86.7,331.5,0,0,0,54.4,Medium priority,Low demand,Longer distance
+"COM Pole 1671 - Enterprize Park, Queens Bridge",144.95981454,-37.81996544,4931,13.9,142.7,2,2,0,22.6,Lower priority,Low demand,Close toilet
+Awning of Nationwide Parking 474 Flinders Street,144.95834911,-37.81997273,146852,205.1,264.8,1,1,0,54.6,Medium priority,Medium demand,Moderate distance
+I-Hub 526 La Trobe Street (Footpath),144.95160411,-37.813005,91144,127.3,342.8,0,0,0,61.5,Medium priority,Low demand,Longer distance
+"Pumping Station No.2, 330 Macaulay Road",144.93530329,-37.79497059,45440,73.8,456.3,0,0,0,54.6,Medium priority,Low demand,Longer distance
+197 Elizabeth Street,144.96276183,-37.81374643,594803,826.1,31.2,4,2,0,55.8,Medium priority,High demand,Close toilet
+Flinders Underpass - Walkway,144.96549709,-37.81909037,455748,633.0,148.2,2,2,0,63.6,Medium priority,High demand,Close toilet
+Bourke Street Mall (South),144.96516718,-37.81380668,534792,742.8,164.2,4,2,1,56.8,Medium priority,High demand,Moderate distance
+Webb Bridge,144.9471751,-37.82293543,157355,241.3,132.1,1,1,1,32.5,Lower priority,Medium demand,Close toilet
+Docklands Waterfront City Building Side,144.93970694,-37.81564989,47022,68.5,225.2,1,1,0,36.8,Lower priority,Low demand,Moderate distance
+155-161 Russell Street,144.96788288,-37.81267313,366116,508.5,107.5,2,2,1,42.6,Lower priority,High demand,Close toilet
+Spencer St-Collins St (South),144.95452748,-37.81909256,273412,379.7,306.5,0,0,0,74.9,Medium priority,Medium demand,Longer distance
+Melbourne Convention Exhibition Centre,144.95604426,-37.82401776,536498,745.1,258.7,1,1,0,75.6,High priority,High demand,Moderate distance
+St Kilda Rd-Alexandra Gardens,144.96872865,-37.8199817,263611,366.1,256.1,1,1,0,61.5,Medium priority,Medium demand,Moderate distance
+Lonsdale St (South),144.96656806,-37.8112185,361612,502.2,227.2,2,1,0,64.9,Medium priority,High demand,Moderate distance
+Lygon St (East),144.96704554,-37.80107122,59585,106.2,124.4,2,1,0,28.6,Lower priority,Low demand,Close toilet
+Lonsdale St-Spring St (West),144.97227587,-37.80999341,175806,245.5,92.6,4,1,0,40.7,Lower priority,Medium demand,Close toilet
+Grattan St-Swanston St (West),144.96386412,-37.80008566,137221,192.7,315.6,0,0,0,64.9,Medium priority,Medium demand,Longer distance
+231 Bourke St,144.96675571,-37.81333081,409621,572.1,15.6,2,2,1,40.8,Lower priority,High demand,Close toilet
+State Library - New,144.96444294,-37.81057846,1044867,1459.3,210.6,1,0,0,86.9,High priority,High demand,Moderate distance
+Flinders Ln -Degraves St (South),144.96562569,-37.81688755,410980,570.8,126.1,2,2,1,49.9,Lower priority,High demand,Close toilet
+Errol Street (East),144.94946228,-37.80456984,124299,180.1,169.5,2,0,0,53.7,Medium priority,Medium demand,Moderate distance
+Westwood Place,144.97136962,-37.81235775,16634,24.2,165.5,3,2,0,27.1,Lower priority,Low demand,Moderate distance
+Macaulay Rd- Bellair St,144.93036194,-37.79453803,45584,71.3,89.6,1,1,0,22.1,Lower priority,Low demand,Close toilet
+114 Flinders Street Car Park Crossing,144.97090512,-37.81632783,15642,26.0,170.5,3,2,0,28.1,Lower priority,Low demand,Moderate distance
+I-Hub 892 Bourke Street,144.94126826,-37.8204637,45474,75.9,320.4,0,0,0,51.8,Medium priority,Low demand,Longer distance
+I-Hub Corner of King Street and Flinders Street (2-6 King),144.95758725,-37.82009057,111574,156.7,253.0,1,1,0,49.3,Lower priority,Medium demand,Moderate distance
+I-Hub Southern Cross Station - Bourke Street Entrance - North,144.95303935,-37.81694221,384707,537.3,341.6,0,0,0,84.5,High priority,High demand,Longer distance
+"Mounted on Toilet - Spencer Street, Batman Park",144.95557015,-37.821728,273467,381.9,1.1,1,1,0,41.0,Lower priority,Medium demand,Close toilet
+iHub 489 Elizabeth Street,144.95987909,-37.80740397,387574,541.3,96.1,5,2,1,43.9,Lower priority,High demand,Close toilet
+484 Spencer Street,144.94931703,-37.80896733,39478,57.5,502.8,0,0,0,54.2,Medium priority,Low demand,Longer distance
+I-Hub 526 La Trobe Street (Crossing),144.95155955,-37.81304149,23836,33.6,344.6,0,0,0,50.9,Medium priority,Low demand,Longer distance
+61-67 Power Street Southbank,144.96299677,-37.82392385,57092,79.6,412.5,0,0,0,57.2,Medium priority,Low demand,Longer distance
+163 King Street,144.95550503,-37.81627451,235190,326.7,217.2,1,1,0,56.8,Medium priority,Medium demand,Moderate distance
+124 Elizabeth Street,144.96371988,-37.81512416,686000,952.8,153.1,4,2,1,58.6,Medium priority,High demand,Moderate distance
+RMIT Building 22 - 330 Swanston Street,144.96395473,-37.80942561,222466,309.4,158.2,1,0,0,60.7,Medium priority,Medium demand,Moderate distance
+Southbank Promenade - Building Side,144.96499384,-37.82020539,370834,517.9,69.7,2,2,0,49.6,Lower priority,High demand,Close toilet
+Southbank Promenade - Riverside,144.96501549,-37.82025374,545888,758.2,70.6,2,2,0,57.1,Medium priority,High demand,Close toilet

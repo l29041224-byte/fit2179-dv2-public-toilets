@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 780,
+  "height": 300,
+  "title": {
+    "text": "Which types of places have more public toilets?",
+    "subtitle": "Place categories derived from toilet names"
+  },
+  "data": {
+    "url": "data/place_category_counts.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 4,
+    "color": "#4c78a8"
+  },
+  "encoding": {
+    "x": {
+      "field": "count",
+      "type": "quantitative",
+      "title": "Number of toilets"
+    },
+    "y": {
+      "field": "category",
+      "type": "nominal",
+      "title": null,
+      "sort": "-x"
+    },
+    "tooltip": [
+      {
+        "field": "category",
+        "title": "Place category"
+      },
+      {
+        "field": "count",
+        "title": "Number of toilets"
+      }
+    ]
+  },
+  "config": {
+    "axis": {
+      "labelFontSize": 13,
+      "titleFontSize": 13
+    },
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}
