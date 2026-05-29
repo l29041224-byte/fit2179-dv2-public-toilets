@@ -1,42 +1,110 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 780,
-  "height": 300,
+  "width": 820,
+  "height": 320,
   "title": {
     "text": "Which types of places have more public toilets?",
-    "subtitle": "Place categories derived from toilet names"
+    "subtitle": "Street locations and parks are the most common categories"
   },
   "data": {
     "url": "https://raw.githubusercontent.com/l29041224-byte/fit2179-dv2-public-toilets/refs/heads/main/data/place_category_counts.csv"
   },
-  "mark": {
-    "type": "bar",
-    "cornerRadiusEnd": 4,
-    "color": "#4c78a8"
-  },
-  "encoding": {
-    "x": {
-      "field": "count",
-      "type": "quantitative",
-      "title": "Number of toilets"
-    },
-    "y": {
-      "field": "category",
-      "type": "nominal",
-      "title": null,
-      "sort": "-x"
-    },
-    "tooltip": [
-      {
-        "field": "category",
-        "title": "Place category"
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 5,
+        "color": "#4c78a8"
       },
-      {
-        "field": "count",
-        "title": "Number of toilets"
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "title": "Number of toilets"
+        },
+        "y": {
+          "field": "category",
+          "type": "nominal",
+          "title": null,
+          "sort": "-x"
+        },
+        "tooltip": [
+          {
+            "field": "category",
+            "title": "Place category"
+          },
+          {
+            "field": "count",
+            "title": "Number of toilets"
+          }
+        ]
       }
-    ]
-  },
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 8,
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#1f2933"
+      },
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "category",
+          "type": "nominal",
+          "sort": "-x"
+        },
+        "text": {
+          "field": "count",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "category": "Street",
+            "count": 33,
+            "label": "Most common"
+          },
+          {
+            "category": "Park / garden",
+            "count": 28,
+            "label": "Second highest"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 48,
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#e76f51"
+      },
+      "encoding": {
+        "x": {
+          "field": "count",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "category",
+          "type": "nominal"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    }
+  ],
   "config": {
     "axis": {
       "labelFontSize": 13,

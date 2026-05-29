@@ -1,10 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 720,
-  "height": 260,
+  "width": 820,
+  "height": 320,
   "title": {
-    "text": "How many toilets provide each facility?",
-    "subtitle": "Number of toilets marked as yes in the dataset"
+    "text": "What facilities are provided?",
+    "subtitle": "Baby-change facilities are much less common than basic male and female facilities"
   },
   "data": {
     "url": "https://raw.githubusercontent.com/l29041224-byte/fit2179-dv2-public-toilets/refs/heads/main/data/feature_yes_counts.csv"
@@ -13,32 +13,29 @@
     {
       "mark": {
         "type": "bar",
-        "cornerRadiusEnd": 4,
+        "cornerRadiusEnd": 5,
         "color": "#2a9d8f"
       },
       "encoding": {
-        "x": {
-          "field": "yes_count",
-          "type": "quantitative",
-          "title": "Number of toilets",
-          "scale": {
-            "domain": [0, 74]
-          }
-        },
         "y": {
           "field": "feature",
           "type": "nominal",
           "title": null,
           "sort": "-x"
         },
+        "x": {
+          "field": "yes_count",
+          "type": "quantitative",
+          "title": "Number of toilets"
+        },
         "tooltip": [
           {
             "field": "feature",
-            "title": "Feature"
+            "title": "Facility"
           },
           {
             "field": "yes_count",
-            "title": "Yes count"
+            "title": "Number of toilets"
           }
         ]
       }
@@ -48,30 +45,65 @@
         "type": "text",
         "align": "left",
         "baseline": "middle",
-        "dx": 5,
-        "fontSize": 12
+        "dx": 8,
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#1f2933"
       },
       "encoding": {
-        "x": {
-          "field": "yes_count",
-          "type": "quantitative"
-        },
         "y": {
           "field": "feature",
           "type": "nominal",
           "sort": "-x"
+        },
+        "x": {
+          "field": "yes_count",
+          "type": "quantitative"
         },
         "text": {
           "field": "yes_count",
           "type": "quantitative"
         }
       }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "feature": "Baby change",
+            "yes_count": 5,
+            "label": "Lowest availability"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 48,
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#e76f51"
+      },
+      "encoding": {
+        "y": {
+          "field": "feature",
+          "type": "nominal"
+        },
+        "x": {
+          "field": "yes_count",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
     }
   ],
   "config": {
     "axis": {
-      "labelFontSize": 12,
-      "titleFontSize": 12
+      "labelFontSize": 13,
+      "titleFontSize": 13
     },
     "view": {
       "stroke": "transparent"

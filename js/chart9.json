@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 850,
-  "height": 460,
+  "width": 880,
+  "height": 500,
   "title": {
     "text": "Which locations should be checked first?",
     "subtitle": "Priority rises when pedestrian demand is high and the nearest toilet is farther away"
@@ -12,10 +12,11 @@
   "layer": [
     {
       "mark": {
-        "type": "circle",
-        "opacity": 0.75,
+        "type": "point",
+        "filled": true,
+        "opacity": 0.72,
         "stroke": "white",
-        "strokeWidth": 0.6
+        "strokeWidth": 1
       },
       "encoding": {
         "x": {
@@ -23,7 +24,7 @@
           "type": "quantitative",
           "title": "April pedestrian total",
           "axis": {
-            "format": "~s"
+            "format": ".1s"
           }
         },
         "y": {
@@ -36,10 +37,7 @@
           "type": "quantitative",
           "title": "Priority score",
           "scale": {
-            "range": [
-              50,
-              900
-            ]
+            "range": [40, 900]
           }
         },
         "color": {
@@ -47,22 +45,14 @@
           "type": "nominal",
           "title": "Priority group",
           "scale": {
-            "domain": [
-              "High priority",
-              "Medium priority",
-              "Lower priority"
-            ],
-            "range": [
-              "#e76f51",
-              "#f4a261",
-              "#2a9d8f"
-            ]
+            "domain": ["Lower priority", "Medium priority", "High priority"],
+            "range": ["#2a9d8f", "#f4a261", "#e76f51"]
           }
         },
         "tooltip": [
           {
             "field": "sensor_description",
-            "title": "Sensor"
+            "title": "Location"
           },
           {
             "field": "total_pedestrians",
@@ -75,12 +65,13 @@
             "format": ".0f"
           },
           {
-            "field": "toilets_within_300m",
-            "title": "Toilets within 300m"
+            "field": "priority_group",
+            "title": "Priority group"
           },
           {
             "field": "priority_score",
-            "title": "Priority score"
+            "title": "Priority score",
+            "format": ".1f"
           }
         ]
       }
@@ -89,26 +80,163 @@
       "data": {
         "values": [
           {
-            "x": 700000,
-            "y": 220,
+            "x": 600000
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeDash": [6, 4],
+        "color": "#6b7280",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "y": 200
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeDash": [6, 4],
+        "color": "#6b7280",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "total_pedestrians": 930000,
+            "nearest_distance_m": 250,
+            "label": "Priority zone"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 18,
+        "fontWeight": "bold",
+        "color": "#e76f51"
+      },
+      "encoding": {
+        "x": {
+          "field": "total_pedestrians",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "nearest_distance_m",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "total_pedestrians": 930000,
+            "nearest_distance_m": 225,
             "label": "High demand + longer distance"
           }
         ]
       },
       "mark": {
         "type": "text",
-        "align": "left",
-        "fontSize": 13,
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 14,
         "fontWeight": "bold",
         "color": "#e76f51"
       },
       "encoding": {
         "x": {
-          "field": "x",
+          "field": "total_pedestrians",
           "type": "quantitative"
         },
         "y": {
-          "field": "y",
+          "field": "nearest_distance_m",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "total_pedestrians": 600000,
+            "nearest_distance_m": 530,
+            "label": "High demand threshold"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "fontSize": 12,
+        "color": "#6b7280"
+      },
+      "encoding": {
+        "x": {
+          "field": "total_pedestrians",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "nearest_distance_m",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "total_pedestrians": 50000,
+            "nearest_distance_m": 205,
+            "label": "Longer distance threshold"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dy": -8,
+        "fontSize": 12,
+        "color": "#6b7280"
+      },
+      "encoding": {
+        "x": {
+          "field": "total_pedestrians",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "nearest_distance_m",
           "type": "quantitative"
         },
         "text": {
@@ -119,15 +247,15 @@
   ],
   "config": {
     "axis": {
-      "labelFontSize": 12,
+      "labelFontSize": 13,
       "titleFontSize": 13
-    },
-    "view": {
-      "stroke": "transparent"
     },
     "legend": {
       "labelFontSize": 12,
       "titleFontSize": 12
+    },
+    "view": {
+      "stroke": "transparent"
     }
   }
 }

@@ -1,11 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 900,
+  "width": 850,
   "height": 380,
   "title": {
-  "text": "Population growth can increase pressure on toilet access",
-  "subtitle": "Current toilet count per 10,000 people, using ABS annual population estimates"
-},
+    "text": "Population growth can increase pressure on toilet access",
+    "subtitle": "Current toilet count per 10,000 people, using ABS annual population estimates"
+  },
   "data": {
     "url": "https://raw.githubusercontent.com/l29041224-byte/fit2179-dv2-public-toilets/refs/heads/main/data/melbourne_population_context.csv"
   },
@@ -15,7 +15,7 @@
         "type": "line",
         "point": {
           "filled": true,
-          "size": 70
+          "size": 80
         },
         "strokeWidth": 3,
         "color": "#4c78a8"
@@ -49,7 +49,8 @@
           },
           {
             "field": "toilets_per_10000_people",
-            "title": "Current toilets per 10,000 people"
+            "title": "Current toilets per 10,000 people",
+            "format": ".2f"
           }
         ]
       }
@@ -76,6 +77,110 @@
           "field": "toilets_per_10000_people",
           "type": "quantitative",
           "format": ".2f"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "year": "2021",
+            "toilets_per_10000_people": 4.83,
+            "label": "Highest point"
+          },
+          {
+            "year": "2024",
+            "toilets_per_10000_people": 3.91,
+            "label": "Lowest point"
+          }
+        ]
+      },
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 160,
+        "color": "#e76f51",
+        "stroke": "white",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "toilets_per_10000_people",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "year": "2021",
+            "toilets_per_10000_people": 4.83,
+            "label": "Highest point in this period"
+          },
+          {
+            "year": "2024",
+            "toilets_per_10000_people": 3.91,
+            "label": "Lowest point in this period"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "bottom",
+        "dx": 12,
+        "dy": -10,
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#e76f51"
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "toilets_per_10000_people",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "year": "2023",
+            "toilets_per_10000_people": 4.45,
+            "label": "After 2021, access per 10,000 people declines"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#4c78a8"
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "toilets_per_10000_people",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "label"
         }
       }
     }
