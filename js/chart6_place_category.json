@@ -7,7 +7,7 @@
     "subtitle": "Place categories derived from toilet names"
   },
   "data": {
-    "url": "data/place_category_counts.csv"
+    "url": "https://raw.githubusercontent.com/l29041224-byte/fit2179-dv2-public-toilets/refs/heads/main/data/place_category_counts.csv"
   },
   "mark": {
     "type": "bar",

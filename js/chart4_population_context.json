@@ -7,7 +7,7 @@
   "subtitle": "Current toilet count per 10,000 people, using ABS annual population estimates"
 },
   "data": {
-    "url": "data/melbourne_population_context.csv"
+    "url": "https://raw.githubusercontent.com/l29041224-byte/fit2179-dv2-public-toilets/refs/heads/main/data/melbourne_population_context.csv"
   },
   "layer": [
     {

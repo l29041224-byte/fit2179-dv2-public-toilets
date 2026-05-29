@@ -14,7 +14,7 @@
   "layer": [
     {
       "data": {
-        "url": "data/melbourne_boundary.geojson",
+        "url": "https://raw.githubusercontent.com/l29041224-byte/fit2179-dv2-public-toilets/refs/heads/main/data/melbourne_boundary.geojson",
         "format": {
           "type": "json",
           "property": "features"
@@ -29,7 +29,7 @@
     },
     {
       "data": {
-        "url": "data/public-toilets.geojson",
+        "url": "https://raw.githubusercontent.com/l29041224-byte/fit2179-dv2-public-toilets/refs/heads/main/data/public-toilets.geojson",
         "format": {
           "type": "json",
           "property": "features"

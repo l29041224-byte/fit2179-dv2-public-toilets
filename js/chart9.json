@@ -7,7 +7,7 @@
     "subtitle": "Priority rises when pedestrian demand is high and the nearest toilet is farther away"
   },
   "data": {
-    "url": "data/priority_quadrant.csv"
+    "url": "https://raw.githubusercontent.com/l29041224-byte/fit2179-dv2-public-toilets/refs/heads/main/data/priority_quadrant.csv"
   },
   "layer": [
     {

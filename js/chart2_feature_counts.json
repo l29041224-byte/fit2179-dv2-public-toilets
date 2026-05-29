@@ -7,7 +7,7 @@
     "subtitle": "Number of toilets marked as yes in the dataset"
   },
   "data": {
-    "url": "data/feature_yes_counts.csv"
+    "url": "https://raw.githubusercontent.com/l29041224-byte/fit2179-dv2-public-toilets/refs/heads/main/data/feature_yes_counts.csv"
   },
   "layer": [
     {

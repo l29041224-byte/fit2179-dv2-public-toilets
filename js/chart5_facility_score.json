@@ -7,7 +7,7 @@
     "subtitle": "Most toilets provide three selected features, while only a few provide all four"
   },
   "data": {
-    "url": "data/facility_score_distribution.csv"
+    "url": "https://raw.githubusercontent.com/l29041224-byte/fit2179-dv2-public-toilets/refs/heads/main/data/facility_score_distribution.csv"
   },
   "layer": [
     {

@@ -7,7 +7,7 @@
     "subtitle": "Baby-change facilities have the largest unavailable share"
   },
   "data": {
-    "url": "data/feature_status_percent.csv"
+    "url": "https://raw.githubusercontent.com/l29041224-byte/fit2179-dv2-public-toilets/refs/heads/main/data/feature_status_percent.csv"
   },
   "mark": {
     "type": "bar",

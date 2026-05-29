@@ -7,7 +7,7 @@
     "subtitle": "Top 10 pedestrian locations ranked by distance to the nearest public toilet"
   },
   "data": {
-    "url": "data/top10_busy_sensor_access.csv"
+    "url": "https://raw.githubusercontent.com/l29041224-byte/fit2179-dv2-public-toilets/refs/heads/main/data/top10_busy_sensor_access.csv"
   },
   "layer": [
     {

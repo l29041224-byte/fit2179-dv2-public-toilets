@@ -7,7 +7,7 @@
     "subtitle": "Nearby toilet features within 300 metres of the 12 busiest pedestrian sensors"
   },
   "data": {
-    "url": "data/inclusive_access_heatmap.csv"
+    "url": "https://raw.githubusercontent.com/l29041224-byte/fit2179-dv2-public-toilets/refs/heads/main/data/inclusive_access_heatmap.csv"
   },
   "mark": {
     "type": "rect",
